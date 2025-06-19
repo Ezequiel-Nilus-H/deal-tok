@@ -1,0 +1,116 @@
+.tiktok-feed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.deal-card {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.deal-info {
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+  color: #fff;
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.deal-indicator {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+.cart-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255);
+  border: none;
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  z-index: 2;
+}
+
+.cart-btn svg {
+  stroke: #22c55e !important;
+  fill: none;
+}
+
+.cart-button.animate-cart-pulse {
+  animation: cart-pulse 2s infinite;
+}
+
+@keyframes cart-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.cart-button.animate-cart-pulse-flash {
+  animation: cart-pulse-flash 0.7s infinite cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 20px 5px #22c55e, 0 0 40px 10px #fff;
+  filter: brightness(1.2) saturate(1.5);
+}
+
+@keyframes cart-pulse-flash {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #22c55e, 0 0 0 0 #fff;
+    filter: brightness(1.2) saturate(1.5);
+  }
+  40% {
+    transform: scale(1.18) rotate(-3deg);
+    box-shadow: 0 0 30px 10px #22c55e, 0 0 60px 20px #fff;
+    filter: brightness(1.5) saturate(2);
+  }
+  60% {
+    transform: scale(1.22) rotate(3deg);
+    box-shadow: 0 0 40px 20px #22c55e, 0 0 80px 30px #fff;
+    filter: brightness(1.7) saturate(2.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #22c55e, 0 0 0 0 #fff;
+    filter: brightness(1.2) saturate(1.5);
+  }
+} 
